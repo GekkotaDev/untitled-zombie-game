@@ -1,0 +1,4 @@
+site_name: Developer Documentation for Dasma Driver Dash
+site_url: https://gekkotadev.github.io
+theme:
+  name: material

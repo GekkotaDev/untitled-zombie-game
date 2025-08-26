@@ -1,0 +1,6 @@
+{
+    "Exported Property": {
+        "prefix": "@export",
+        "body": "@export var $0"
+    }
+}
