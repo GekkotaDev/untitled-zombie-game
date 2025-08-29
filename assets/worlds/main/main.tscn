@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://caoxehl6fmw4h"]
+[gd_scene load_steps=7 format=3 uid="uid://caoxehl6fmw4h"]
 
 [ext_resource type="Script" uid="uid://ffrful8ha0xl" path="res://assets/worlds/main/mesh_instance_3d.gd" id="1_lp8mu"]
+[ext_resource type="Texture2D" uid="uid://b0f11po7gpny4" path="res://assets/screens/main/button_square_depth_gradient.png" id="2_c7t33"]
+[ext_resource type="Texture2D" uid="uid://wul5xgtfowgk" path="res://assets/screens/main/button_square_flat.png" id="3_6jarg"]
+[ext_resource type="Script" uid="uid://k06o8bfefmwp" path="res://assets/worlds/main/play_button.gd" id="4_6jarg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qhvn"]
 
@@ -9,13 +12,6 @@ emission_enabled = true
 emission = Color(0, 0.541176, 0.854902, 1)
 
 [node name="World" type="Node3D"]
-
-[node name="UserInterface" type="Container" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="WorldViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -28,7 +24,9 @@ stretch = true
 stretch_shrink = 4
 
 [node name="WorldViewport" type="SubViewport" parent="WorldViewportContainer"]
+handle_input_locally = false
 size = Vector2i(288, 162)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="WorldViewportContainer/WorldViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.999997, 0.00244346, 0, -0.00244346, 0.999997, 0, 0, 0)
@@ -41,3 +39,81 @@ script = ExtResource("1_lp8mu")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldViewportContainer/WorldViewport"]
 light_energy = 5.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -34.0
+offset_right = 32.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="TextureButton" parent="Control/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_c7t33")
+texture_pressed = ExtResource("3_6jarg")
+script = ExtResource("4_6jarg")
+
+[node name="Label" type="Label" parent="Control/HFlowContainer/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.0
+offset_right = 32.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+horizontal_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="Control/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_c7t33")
+texture_pressed = ExtResource("3_6jarg")
+
+[node name="Label" type="Label" parent="Control/HFlowContainer/SettingsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.5
+offset_top = 100.0
+offset_right = 84.5
+offset_bottom = 123.0
+grow_horizontal = 2
+text = "untitled zombie game"
+
+[connection signal="pressed" from="Control/HFlowContainer/PlayButton" to="Control/HFlowContainer/PlayButton" method="_on_pressed"]
