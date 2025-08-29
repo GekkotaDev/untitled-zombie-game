@@ -1,7 +1,8 @@
 {
 	"folders": [
         {
-            "path": ".."
+            "path": "..",
+            "name": "untitled-zombie-game"
         },
         {
             "path": "../docs"
@@ -24,6 +25,9 @@
         "[markdown]": {
             "editor.wordWrap": "bounded",
             "editor.wordWrapColumn": 90
+        },
+        "files.exclude": {
+            "**/*.uid": true
         },
         "yaml.schemas": {
             "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
