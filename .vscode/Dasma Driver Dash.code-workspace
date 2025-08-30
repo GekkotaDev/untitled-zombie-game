@@ -26,6 +26,8 @@
             "editor.wordWrap": "bounded",
             "editor.wordWrapColumn": 90
         },
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
         "files.exclude": {
             "**/*.uid": true
         },
@@ -40,6 +42,7 @@
             "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
             "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
             "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
-        ]
+        ],
+        "godotTools.editorPath.godot4": "d:\\jerem\\AppData\\Roaming\\Godots\\versions\\Godot_v4_4_1-stable_mono_win64\\Godot_v4.4.1-stable_mono_win64\\Godot_v4.4.1-stable_mono_win64.exe"
     },
 }
