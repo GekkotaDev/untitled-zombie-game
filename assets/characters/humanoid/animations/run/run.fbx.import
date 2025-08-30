@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ipflltq2gqkn"
-path="res://.godot/imported/jump.fbx-ebf28ba4af51277939e4bf1df715a659.scn"
+uid="uid://cfy455bo7bfw6"
+path="res://.godot/imported/run.fbx-88739b6bdf49a4ac31f82d69cc2c25bc.scn"
 
 [deps]
 
-source_file="res://assets/characters/humanoid/animations/jump.fbx"
-dest_files=["res://.godot/imported/jump.fbx-ebf28ba4af51277939e4bf1df715a659.scn"]
+source_file="res://assets/characters/humanoid/animations/run/run.fbx"
+dest_files=["res://.godot/imported/run.fbx-88739b6bdf49a4ac31f82d69cc2c25bc.scn"]
 
 [params]
 
